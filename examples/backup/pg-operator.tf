@@ -1,0 +1,3 @@
+module "postgres-operator" {
+  source = "../.."
+}

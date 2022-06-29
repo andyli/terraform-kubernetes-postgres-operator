@@ -11,6 +11,8 @@ services:
       - KUBE_CONFIG_PATH=/workspace/.devcontainer/kubeconfig.yaml
       - EARTHLY_BUILDKIT_HOST=tcp://earthly:8372
       - EARTHLY_REMOTE_CACHE=ghcr.io/beeinventor/terraform_kubernetes_postgres_operator_cache:master
+      # rclone
+      - RCLONE_NO_CHECK_CERTIFICATE=true
     volumes:
       - ..:/workspace:cached
       - /var/run/docker.sock:/var/run/docker-host.sock

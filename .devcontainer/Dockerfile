@@ -30,6 +30,7 @@ RUN apt-get update \
         bash-completion \
         jq \
         direnv \
+        rclone \
         software-properties-common \
         docker-ce \
     #
@@ -77,3 +78,6 @@ RUN echo 'complete -C terraform terraform' >> /home/$USERNAME/.bashrc \
 # Config direnv
 COPY --chown=$USER_UID:$USER_GID ./direnv.toml /home/$USERNAME/.config/direnv/config.toml
 RUN echo 'eval "$(direnv hook bash)"' >> /home/$USERNAME/.bashrc
+
+# Config rclone
+COPY --chown=$USER_UID:$USER_GID ./rclone.conf /home/$USERNAME/.config/rclone/rclone.conf
